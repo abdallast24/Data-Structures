@@ -1,0 +1,49 @@
+Arrays are linear datastructure , They have to be sequential , identical and have fixed size. 
+
+
+when you create a new array , PC reserves an array of the given type with the given size ,
+
+and creates a couple of data fields like 
+
+1- header which stores the reference of the first element in the array ,
+
+2- a variable which stores the number of bits of the array's type 
+
+e.g like integers = 32 , and boolean = 1 bits
+
+so that if you need to access an element in the array ,
+
+the computer answers your query in o(1) by calculating
+
+header + your query index * the array's data type size.
+
+for instance , if you need to get the value in the index 4 in an array of integers and the first array's element in the position 1000 
+
+in the PC's memory then , the computer gets you the value in the position (1000+4*32) which means 
+
+(header+index*number of bits for integer).
+
+-multi dimension arrays : 
+
+Also , PC reserves a variable for number of dimensions , 
+
+the size of each dimension the array should be identical as the computer should know the data type size 
+
+to calculate each position you give to it. the computer will need to calculate the sum of data type before the index you give to 
+
+it to get you the right position if the array is not identical. Also , the array should be sequential as the computer will 
+
+need to calculate the sum of all empty places in the memory before the index you give to it 
+and after the head of the array to get you the right position. the array should have fixed size as if you created an array 
+with size 4 and you need to put an element in the 5-th position , it may be not empty :). 
+
+
+
+when you create a multi dimension array for instance , int a[]=new int[3][5] PC reserve (sequentially)three arrays with size 5. 
+---------------------------------------------------------------------------------------
+|     |       |      |      |     |       |      |    |    |    |     |     |   |     |   <--- memory after reserving a
+---------------------------------------------------------------------------------------
+
+if you want to get the value in a[2][3] , then the formula is
+
+header+2*size of the array(1d)*num of bits in integer+3*num of bits in integer.
